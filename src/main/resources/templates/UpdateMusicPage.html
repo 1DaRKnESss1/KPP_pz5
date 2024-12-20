@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Music</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <script th:src="@{/jquery/jquery.min.js}"></script>
+    <script th:src="@{/popper/popper.min.js}"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<th:block th:include="/_menu"></th:block>
+
+<div class="container mt-4">
+    <h2>Update Music</h2>
+
+    <form action="/updateMusic" method="post">
+        <div class="form-group">
+            <label for="id">Select Music by ID:</label>
+            <select name="id" id="id" class="form-control">
+                <option th:each="music : ${allMusics}"
+                        th:value="${music.id}"
+                        th:text="'ID: ' + ${music.id} + ' - ' + ${music.title}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="composer">Composer:</label>
+            <input type="text" id="composer" name="composer" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="duration">Duration (seconds):</label>
+            <input type="number" id="duration" name="duration" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="type">Type:</label>
+            <input type="text" id="type" name="type" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Music</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<div xmlns:th="http://www.thymeleaf.org" class="menu-container">
+    <nav class="menu">
+        <a th:href="@{/}" class="menu-link">Music</a>
+        <a th:href="@{/musics}" class="menu-link">All Musics</a>
+        <a th:href="@{/addMusic}" class="menu-link">Add Music</a>
+        <a th:href="@{/deleteMusic}" class="menu-link">Delete Music</a>
+        <a th:href="@{/getMusicByComposer}" class="menu-link">Get Music By Composer</a>
+        <a th:href="@{/updateMusic}" class="menu-link">Update Music</a>
+    </nav>
+</div>
+
+<style>
+    /* Стиль для посилань меню */
+    .menu-link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 8px 12px;
+        transition: background-color 0.3s, color 0.3s, transform 0.3s;  /* Adding transition for transform */
+        border-radius: 4px;
+    }
+
+    /* Анімація при ховері */
+    .menu-link:hover {
+        background-color: #575757;
+        color: #ffcc00;
+        transform: scale(1.1);
+    }
+
+    /* Анімація при натисканні */
+    .menu-link:active {
+        transform: scale(0.95);
+    }
+
+    /* Стиль для контейнера меню */
+    .menu-container {
+        background-color: #333;
+        padding: 10px 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Стиль для меню */
+    .menu {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Стиль для кнопок меню */
+    .menu-link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 8px 12px;
+        transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        border-radius: 4px;
+    }
+
+    .menu-link:hover {
+        background-color: #575757;
+        color: #ffcc00;
+        transform: scale(1.1);
+    }
+
+    .menu-link:active {
+        transform: scale(0.95);
+    }
+
+    @media (max-width: 768px) {
+        .menu {
+            flex-direction: column;
+            align-items: center;
+        }
+        .menu-link {
+            margin-bottom: 10px;
+        }
+    }
+</style>

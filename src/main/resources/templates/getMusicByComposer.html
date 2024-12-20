@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Find Music by Composer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+  <link th:href="@{/css/styles.css}" rel="stylesheet" />
+  <script th:src="@{/jquery/jquery.min.js}"></script>
+  <script th:src="@{/popper/popper.min.js}"></script>
+  <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<th:block th:include="/_menu"></th:block>
+
+<div class="container mt-4">
+  <h2>Find Music by Composer</h2>
+
+  <form th:action="@{/getMusicByComposer}" th:object="${getMusicByComposerForm}" method="post">
+    <div class="form-group">
+      <label for="composer">Composer:</label>
+      <input type="text" id="composer" th:field="*{composer}" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  <div th:if="${musics != null}" class="mt-4">
+    <h3>Music Found:</h3>
+    <ul>
+      <li th:each="music : ${musics}">
+        <p>Title: <span th:text="${music.title}"></span></p>
+        <p>Composer: <span th:text="${music.composer}"></span></p>
+        <p>Duration: <span th:text="${music.duration}"></span> seconds</p>
+        <p>Type: <span th:text="${music.type}"></span></p>
+      </li>
+    </ul>
+  </div>
+  <div th:if="${message != null}" class="alert alert-warning mt-4">
+    <p th:text="${message}"></p>
+  </div>
+</div>
+</body>
+</html>

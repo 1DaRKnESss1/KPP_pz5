@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Musics</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <script th:src="@{/jquery/jquery.min.js}"></script>
+    <script th:src="@{/popper/popper.min.js}"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+
+<body>
+<!-- Menu section -->
+<th:block th:include="/_menu"></th:block>
+
+<div class="container mt-5">
+    <h2 class="text-center">Musics</h2>
+
+    <table class="table table-hover table-striped text-center mt-3">
+        <thead class="table-primary">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Composer</th>
+            <th>Duration</th>
+            <th>Type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="music : ${allMusics}">
+            <tr>
+                <td th:text="${music.id}"></td>
+                <td th:text="${music.title}"></td>
+                <td th:text="${music.composer}"></td>
+                <td th:text="${music.duration}"></td>
+                <td th:text="${music.type}"></td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

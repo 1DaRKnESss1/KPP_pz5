@@ -1,0 +1,86 @@
+/* Загальні стилі для тіла сторінки */
+body {
+    font-family: 'Quicksand', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease;
+}
+
+/* Стиль для контейнера таблиці */
+.container {
+    padding: 20px;
+}
+
+/* Стиль заголовка */
+h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease;
+}
+
+/* Анімація для заголовка */
+h2:hover {
+    color: #ff6600;
+}
+
+/* Стиль для таблиці */
+.table {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Стиль для заголовків таблиці */
+.table th {
+    background-color: #ff6600;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+}
+
+/* Ховер ефект для заголовків таблиці */
+.table th:hover {
+    background-color: #e65c00;
+}
+
+/* Стиль для рядків таблиці */
+.table td {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+/* Ховер ефект для рядків таблиці */
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+}
+
+/* Стиль для рядка таблиці при натисканні */
+.table tbody tr:active {
+    transform: scale(0.98);
+}
+
+/* Мобільний стиль для таблиці */
+@media (max-width: 768px) {
+    .table {
+        font-size: 14px;
+    }
+
+    .table td {
+        padding: 10px;
+    }
+}
+
